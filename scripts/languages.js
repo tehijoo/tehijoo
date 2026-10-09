@@ -80,18 +80,18 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 
 function render(top, icons) {
   const W = 900;
-  const ROW_START = 150;
-  const ROW_H = 60;
+  const ROW_START = 116;
+  const ROW_H = 42;
   const BAR_X = 80;
   const BAR_W = 690;
-  const H = ROW_START + top.length * ROW_H + 52;
+  const H = ROW_START + top.length * ROW_H + 34;
   const max = top.length ? top[0].pct : 1;
   const date = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'Asia/Jakarta' }).toUpperCase();
   const glow = (id, sd) => `<filter id="${id}" x="-50%" y="-80%" width="200%" height="260%"><feGaussianBlur stdDeviation="${sd}" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`;
 
   const rows = top.map((l, i) => {
     const y = ROW_START + i * ROW_H;
-    const barY = y + 12;
+    const barY = y + 9;
     const w = Math.max(6, (l.pct / max) * BAR_W);
     const color = USE_LANGUAGE_COLORS ? (LANG_COLORS[l.name] || C.accent) : null;
     const fill = color || 'url(#bar)';
@@ -101,15 +101,15 @@ function render(top, icons) {
     const grow = (attr, from, to) => `<animate attributeName="${attr}" values="${from};${from};${to}" keyTimes="${kt}" dur="${total.toFixed(2)}s" fill="freeze" calcMode="spline" keySplines="0 0 1 1;0.22 1 0.36 1"/>`;
     return `
 <g>
-<circle cx="88" cy="${y - 5}" r="5" fill="${color || C.accent}" filter="url(#g)"/>
-<text x="102" y="${y}" font-family="${MONO}" font-size="13" letter-spacing="3" fill="${C.muted}">${esc(l.name.toUpperCase())}</text>
-<text x="${BAR_X + BAR_W}" y="${y}" text-anchor="end" font-family="${MONO}" font-size="15" font-weight="700" fill="${C.text}">${l.pct.toFixed(1)}%</text>
-${icons[i] ? `<image href="${icons[i]}" x="${BAR_X + BAR_W + 22}" y="${y - 21}" width="30" height="30"/>` : ''}
-<rect x="${BAR_X}" y="${barY}" width="${BAR_W}" height="10" rx="5" fill="${C.track}"/>
-<rect x="${BAR_X}" y="${barY}" width="${w.toFixed(1)}" height="10" rx="5" fill="${fill}" filter="url(#gs)">${grow('width', 0, w.toFixed(1))}</rect>
-<clipPath id="c${i}"><rect x="${BAR_X}" y="${barY}" width="${w.toFixed(1)}" height="10" rx="5"/></clipPath>
-<g clip-path="url(#c${i})"><rect x="${BAR_X - 120}" y="${barY}" width="110" height="10" fill="url(#shine)"><animate attributeName="x" values="${BAR_X - 120};${BAR_X + w}" dur="2.6s" begin="${(total + i * 0.4).toFixed(2)}s" repeatCount="indefinite"/></rect></g>
-<circle cx="${(BAR_X + w).toFixed(1)}" cy="${barY + 5}" r="4.5" fill="#ffffff" filter="url(#g)">${grow('cx', BAR_X, (BAR_X + w).toFixed(1))}<animate attributeName="r" values="4.5;3;4.5" dur="1.8s" repeatCount="indefinite"/></circle>
+<circle cx="88" cy="${y - 4}" r="4.5" fill="${color || C.accent}" filter="url(#g)"/>
+<text x="102" y="${y}" font-family="${MONO}" font-size="12" letter-spacing="3" fill="${C.muted}">${esc(l.name.toUpperCase())}</text>
+<text x="${BAR_X + BAR_W}" y="${y}" text-anchor="end" font-family="${MONO}" font-size="14" font-weight="700" fill="${C.text}">${l.pct.toFixed(1)}%</text>
+${icons[i] ? `<image href="${icons[i]}" x="${BAR_X + BAR_W + 26}" y="${y - 16}" width="24" height="24"/>` : ''}
+<rect x="${BAR_X}" y="${barY}" width="${BAR_W}" height="8" rx="4" fill="${C.track}"/>
+<rect x="${BAR_X}" y="${barY}" width="${w.toFixed(1)}" height="8" rx="4" fill="${fill}" filter="url(#gs)">${grow('width', 0, w.toFixed(1))}</rect>
+<clipPath id="c${i}"><rect x="${BAR_X}" y="${barY}" width="${w.toFixed(1)}" height="8" rx="4"/></clipPath>
+<g clip-path="url(#c${i})"><rect x="${BAR_X - 120}" y="${barY}" width="110" height="8" fill="url(#shine)"><animate attributeName="x" values="${BAR_X - 120};${BAR_X + w}" dur="2.6s" begin="${(total + i * 0.4).toFixed(2)}s" repeatCount="indefinite"/></rect></g>
+<circle cx="${(BAR_X + w).toFixed(1)}" cy="${barY + 4}" r="4" fill="#ffffff" filter="url(#g)">${grow('cx', BAR_X, (BAR_X + w).toFixed(1))}<animate attributeName="r" values="4;2.6;4" dur="1.8s" repeatCount="indefinite"/></circle>
 </g>`;
   }).join('');
 
@@ -129,12 +129,12 @@ ${glow('gs', 1.6)}
 <rect x="2" y="2" width="${W - 4}" height="${H - 4}" rx="22" fill="url(#grid)"/>
 <rect x="2" y="2" width="${W - 4}" height="${H - 4}" rx="22" fill="url(#halo)"/>
 <rect x="2" y="2" width="${W - 4}" height="${H - 4}" rx="22" fill="none" stroke="url(#edge)" stroke-width="2" filter="url(#g)"><animate attributeName="opacity" values=".55;1;.55" dur="3.2s" repeatCount="indefinite"/></rect>
-<text x="${W / 2}" y="72" text-anchor="middle" font-family="${MONO}" font-size="27" font-weight="700" letter-spacing="8" fill="${C.text}" filter="url(#g)">MOST USED LANGUAGES</text>
-<rect x="${W / 2 - 60}" y="86" width="120" height="3" rx="1.5" fill="${C.accent}" filter="url(#g)"><animate attributeName="width" values="60;120;60" dur="3s" repeatCount="indefinite"/><animate attributeName="x" values="${W / 2 - 30};${W / 2 - 60};${W / 2 - 30}" dur="3s" repeatCount="indefinite"/></rect>
-<rect x="${BAR_X}" y="112" width="${BAR_W + 52}" height="1.2" fill="url(#rule)"/>
-<circle cx="${BAR_X}" cy="112.6" r="2.4" fill="${C.accent}" filter="url(#g)"><animate attributeName="cx" values="${BAR_X};${BAR_X + BAR_W + 52};${BAR_X}" dur="6s" repeatCount="indefinite"/></circle>
+<text x="${W / 2}" y="50" text-anchor="middle" font-family="${MONO}" font-size="23" font-weight="700" letter-spacing="8" fill="${C.text}" filter="url(#g)">MOST USED LANGUAGES</text>
+<rect x="${W / 2 - 60}" y="62" width="120" height="3" rx="1.5" fill="${C.accent}" filter="url(#g)"><animate attributeName="width" values="60;120;60" dur="3s" repeatCount="indefinite"/><animate attributeName="x" values="${W / 2 - 30};${W / 2 - 60};${W / 2 - 30}" dur="3s" repeatCount="indefinite"/></rect>
+<rect x="${BAR_X}" y="80" width="${BAR_W + 52}" height="1.2" fill="url(#rule)"/>
+<circle cx="${BAR_X}" cy="80.6" r="2.4" fill="${C.accent}" filter="url(#g)"><animate attributeName="cx" values="${BAR_X};${BAR_X + BAR_W + 52};${BAR_X}" dur="6s" repeatCount="indefinite"/></circle>
 ${rows}
-<text x="${W / 2}" y="${H - 26}" text-anchor="middle" font-family="${MONO}" font-size="11" letter-spacing="3" fill="${C.muted}" opacity=".85">AUTO-UPDATED DAILY // ${date}<tspan fill="${C.accent}">_<animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></tspan></text>
+<text x="${W / 2}" y="${H - 16}" text-anchor="middle" font-family="${MONO}" font-size="10" letter-spacing="3" fill="${C.muted}" opacity=".85">AUTO-UPDATED DAILY // ${date}<tspan fill="${C.accent}">_<animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></tspan></text>
 </svg>
 `;
 }
