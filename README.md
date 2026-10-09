@@ -31,7 +31,6 @@ Here are some ideas to get you started:
 <img width="100%" src="https://raw.githubusercontent.com/tehijoo/tehijoo/languages/languages.svg" alt="Most used languages"/>
 </div>
 
-## 👾 Contribution Graph
 
 <div align="center">
 <picture>
