@@ -1,3 +1,5 @@
+## Hi there 👋
+
 <!--
 **tehijoo/tehijoo** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
@@ -13,7 +15,7 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-## 
+## 🤝 Let's Connect
 
 <div align="center">
 
@@ -26,6 +28,12 @@ Here are some ideas to get you started:
 <a href="https://www.instagram.com/alyarmtilh"><img width="160" src="instagram.svg" alt="Instagram"/></a>
 <a href="https://tehijoo.github.io/Portofolio-AlyaRahmatillahMachmud"><img width="160" src="portfolio.svg" alt="Portfolio"/></a>
 
+</div>
+
+## 📊 Most Used Languages
+
+<div align="center">
+<img width="100%" src="https://raw.githubusercontent.com/tehijoo/tehijoo/languages/languages.svg" alt="Most used languages"/>
 </div>
 
 ## 👾 Contribution Graph
