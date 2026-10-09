@@ -31,11 +31,8 @@ Here are some ideas to get you started:
 <img width="100%" src="https://raw.githubusercontent.com/tehijoo/tehijoo/languages/languages.svg" alt="Most used languages"/>
 </div>
 
-
-
-
-
-
+<br>
+<br>
 <div align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tehijoo/tehijoo/output/pacman-contribution-graph-dark.svg">
