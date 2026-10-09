@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="140" viewBox="0 0 900 140" role="img" aria-label="Thanks for visiting">
+<defs>
+<style>
+.l{animation:left 10s linear infinite}
+.s{animation:left 7s linear infinite}
+.r{animation:right 16s linear infinite}
+@keyframes left{from{transform:translateX(0)}to{transform:translateX(-900px)}}
+@keyframes right{from{transform:translateX(-900px)}to{transform:translateX(0)}}
+</style>
+<linearGradient id="f" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="450" y2="0" spreadMethod="reflect"><stop offset="0" stop-color="#170a14"/><stop offset=".55" stop-color="#5b1147"/><stop offset="1" stop-color="#c026d3"/></linearGradient>
+<linearGradient id="f2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="450" y2="0" spreadMethod="reflect"><stop offset="0" stop-color="#c026d3"/><stop offset=".5" stop-color="#5b1147"/><stop offset="1" stop-color="#170a14"/></linearGradient>
+<filter id="g" x="-50%" y="-80%" width="200%" height="260%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<path id="a" d="M0,54 Q75,38 150,54 T300,54 T450,54 T600,54 T750,54 T900,54 T1050,54 T1200,54 T1350,54 T1500,54 T1650,54 T1800,54 L1800,140 L0,140 Z"/>
+<path id="b" d="M0,66 Q56.25,54 112.5,66 T225,66 T337.5,66 T450,66 T562.5,66 T675,66 T787.5,66 T900,66 T1012.5,66 T1125,66 T1237.5,66 T1350,66 T1462.5,66 T1575,66 T1687.5,66 T1800,66 L1800,140 L0,140 Z"/>
+<path id="be" d="M0,66 Q56.25,54 112.5,66 T225,66 T337.5,66 T450,66 T562.5,66 T675,66 T787.5,66 T900,66 T1012.5,66 T1125,66 T1237.5,66 T1350,66 T1462.5,66 T1575,66 T1687.5,66 T1800,66"/>
+<path id="c" d="M0,86 Q45,77 90,86 T180,86 T270,86 T360,86 T450,86 T540,86 T630,86 T720,86 T810,86 T900,86 T990,86 T1080,86 T1170,86 T1260,86 T1350,86 T1440,86 T1530,86 T1620,86 T1710,86 T1800,86 L1800,140 L0,140 Z"/>
+</defs>
+<g class="r" fill="#f472b6" opacity=".22"><use href="#a"/></g>
+<g class="l" fill="url(#f)" opacity=".95"><use href="#b"/></g>
+<g class="l" fill="none" stroke="#f472b6" stroke-width="2" opacity=".75" filter="url(#g)"><use href="#be"/></g>
+<g class="s" fill="url(#f2)" opacity=".85"><use href="#c"/></g>
+<text x="450" y="124" text-anchor="middle" font-family="'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace" font-size="11" letter-spacing="5" fill="#fce7f3" opacity=".85">THANKS FOR STOPPING BY</text>
+</svg>

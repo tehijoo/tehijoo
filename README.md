@@ -15,6 +15,21 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
+## 🤝 Let's Connect
+
+<div align="center">
+
+<img width="100%" src="connect.svg" alt="Get in touch"/>
+
+<p>I'm always happy to talk about web development, collaborations, and new opportunities.</p>
+
+<a href="https://www.linkedin.com/in/alyarahmatillahmachmud"><img width="160" src="linkedin.svg" alt="LinkedIn"/></a>
+<a href="mailto:alyamachmud2005@gmail.com"><img width="160" src="gmail.svg" alt="Gmail"/></a>
+<a href="https://www.instagram.com/alyarmtilh"><img width="160" src="instagram.svg" alt="Instagram"/></a>
+<a href="https://tehijoo.github.io/Portofolio-AlyaRahmatillahMachmud"><img width="160" src="portfolio.svg" alt="Portfolio"/></a>
+
+</div>
+
 ## 👾 Contribution Graph
 
 <div align="center">
@@ -23,4 +38,8 @@ Here are some ideas to get you started:
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tehijoo/tehijoo/output/pacman-contribution-graph.svg">
   <img alt="Pacman contribution graph" src="https://raw.githubusercontent.com/tehijoo/tehijoo/output/pacman-contribution-graph.svg">
 </picture>
+</div>
+
+<div align="center">
+<img width="100%" src="footer.svg" alt="Thanks for stopping by"/>
 </div>
